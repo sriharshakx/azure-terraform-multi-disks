@@ -64,3 +64,10 @@ resource "azurerm_managed_disk" "example" {
     environment = "disk1"
   }
 }
+
+resource "azurerm_virtual_machine_data_disk_attachment" "example" {
+  managed_disk_id    = azurerm_managed_disk.example.id
+  virtual_machine_id = azurerm_virtual_machine.main.id
+  lun                = "10"
+  caching            = "ReadWrite"
+}
