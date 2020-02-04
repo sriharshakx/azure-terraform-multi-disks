@@ -1,4 +1,5 @@
 variable "vmname" {}
+variable "nicname" {}
 
 resource "azurerm_virtual_machine" "main" {
   name                  = var.vmname
@@ -38,7 +39,7 @@ resource "azurerm_virtual_machine" "main" {
 
 
 resource "azurerm_network_interface" "main" {
-  name                = "sample-nic"
+  name                = var.nicname
   location            = "East US"
   resource_group_name = "OpenShift"
 
