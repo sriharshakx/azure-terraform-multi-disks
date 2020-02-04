@@ -6,3 +6,8 @@ module "vm1" {
   source  = "./vms"
   vmname  = "sample-vm-1"
 }
+
+module "vm2" {
+  source  = "./vms"
+  vmname  = "sample-vm-2"
+}
