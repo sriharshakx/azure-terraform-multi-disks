@@ -54,7 +54,7 @@ resource "azurerm_network_interface" "main" {
 
 resource "azurerm_managed_disk" "example" {
   count                 = 2
-  name                 = "acctestmd${count.index}"
+  name                 = "acctestmd-${var.vmname}-${count.index}"
   location             = "East US"
   resource_group_name  = "OpenShift"
   storage_account_type = "Standard_LRS"
