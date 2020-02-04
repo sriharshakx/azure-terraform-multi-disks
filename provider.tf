@@ -46,7 +46,7 @@ resource "azurerm_network_interface" "main" {
 
   ip_configuration {
     name                          = "testconfiguration1"
-    subnet_id                     = "default"
+    subnet_id                     = "/subscriptions/522fb493-ffab-4a5c-b72d-fe645a4d1e41/resourceGroups/OpenShift/providers/Microsoft.Network/virtualNetworks/OpenShift-vnet/subnets/default"
     private_ip_address_allocation = "Dynamic"
   }
 }
