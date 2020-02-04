@@ -6,10 +6,12 @@ module "vm1" {
   source  = "./vms"
   vmname  = "sample-vm-1"
   nicname = "sample-nic-1"
+  diskname = "osdisk1"
 }
 
 module "vm2" {
   source  = "./vms"
   vmname  = "sample-vm-2"
   nicname = "sample-nic-2"
+  diskname = "osdisk2"
 }

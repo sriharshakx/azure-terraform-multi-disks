@@ -1,5 +1,6 @@
 variable "vmname" {}
 variable "nicname" {}
+variable "diskname" {}
 
 resource "azurerm_virtual_machine" "main" {
   name                  = var.vmname
@@ -19,7 +20,7 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "myosdisk1"
+    name              = var.diskname
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
