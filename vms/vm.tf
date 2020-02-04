@@ -51,7 +51,7 @@ resource "azurerm_network_interface" "main" {
 
 
 resource "azurerm_managed_disk" "example" {
-  count                 = 10
+  count                 = 2
   name                 = "acctestmd${count.index}"
   location             = "East US"
   resource_group_name  = "OpenShift"
@@ -65,7 +65,7 @@ resource "azurerm_managed_disk" "example" {
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "example" {
-  count               = 10
+  count               = 2
   managed_disk_id     = element(azurerm_managed_disk.example.*.id, count.index)
   virtual_machine_id  = azurerm_virtual_machine.main.id
   lun                 = count.index+10
